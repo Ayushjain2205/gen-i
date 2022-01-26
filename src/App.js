@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { createClient } from "@supabase/supabase-js";
+import "./App.css";
+import Landing from "./Pages/Landing";
+import Homepage from "./Pages/Homepage";
+
+import { UserContext } from "./Contexts/UserContext";
 
 function App() {
+  const supabase = createClient(
+    "https://xzzkdkhvjsyxhoicwwyd.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQzMTE5NDMzLCJleHAiOjE5NTg2OTU0MzN9.9L3sH7j7kekDlntxqOyaJtaOkQbuAjPxDw1rGHwQDZ0"
+  );
+
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    /* when the app loads, check to see if the user is signed in */
+    checkUser();
+    /* check user on OAuth redirect */
+    window.addEventListener("hashchange", function () {
+      checkUser();
+    });
+  }, []);
+  async function checkUser() {
+    /* if a user is signed in, update local state */
+    const user = supabase.auth.user();
+    setUser(user);
+  }
+  async function signInWithGithub() {
+    /* authenticate with GitHub */
+    await supabase.auth.signIn({
+      provider: "github",
+    });
+  }
+  async function signOut() {
+    /* sign the user out */
+    await supabase.auth.signOut();
+    setUser(null);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{ user, setUser }}>
+      <div className='App'>
+        {user ? <Homepage name={user.email} /> : <Landing />}
+      </div>
+    </UserContext.Provider>
   );
 }
 
