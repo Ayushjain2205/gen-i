@@ -168,6 +168,7 @@ function Landing() {
 
       <div className='desktop'>
         <img
+          className='desktop-icons'
           src='https://i.postimg.cc/SNCNWP4W/Frame-596.png'
           alt=''
           srcset=''

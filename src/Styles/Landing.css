@@ -340,3 +340,9 @@
 .connect-github i {
   margin-right: 5px;
 }
+
+.desktop-icons {
+  height: 245px;
+  width: 250px;
+  margin-left: -20px;
+}
