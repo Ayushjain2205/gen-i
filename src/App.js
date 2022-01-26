@@ -27,6 +27,7 @@ function App() {
     window.addEventListener("hashchange", function () {
       const user = supabase.auth.user();
       setUser(user);
+      window.location.reload(false);
     });
   }, []);
 
