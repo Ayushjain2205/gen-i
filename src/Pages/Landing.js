@@ -167,6 +167,11 @@ function Landing() {
       </div>
 
       <div className='desktop'>
+        <img
+          src='https://i.postimg.cc/SNCNWP4W/Frame-596.png'
+          alt=''
+          srcset=''
+        />
         <div className='window' style={{ display: "block" }}>
           <div className='title-bar'>
             <div className='title-bar-text'>Welcome to GEN-I !</div>
