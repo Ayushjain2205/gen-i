@@ -13,19 +13,23 @@ function App() {
   );
 
   const [user, setUser] = useState("");
-  useEffect(() => {
-    /* when the app loads, check to see if the user is signed in */
-    checkUser();
-    /* check user on OAuth redirect */
-    window.addEventListener("hashchange", function () {
-      checkUser();
-    });
-  }, []);
+
   async function checkUser() {
     /* if a user is signed in, update local state */
     const user = supabase.auth.user();
     setUser(user);
   }
+
+  useEffect(() => {
+    /* when the app loads, check to see if the user is signed in */
+    checkUser();
+    /* check user on OAuth redirect */
+    window.addEventListener("hashchange", function () {
+      const user = supabase.auth.user();
+      setUser(user);
+    });
+  }, []);
+
   async function signInWithGithub() {
     /* authenticate with GitHub */
     await supabase.auth.signIn({
