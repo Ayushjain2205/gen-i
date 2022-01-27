@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/rest";
 export const octokit = new Octokit({
-  auth: "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",
+  auth: process.env.GITHUB_TOKEN,
   userAgent: "skylight v1",
 });

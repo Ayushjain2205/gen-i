@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import useOctokit from "../Helpers/useOctokit";
 import { octokit } from "../Utils/octokit";
 
 function MyProfile({ username }) {
