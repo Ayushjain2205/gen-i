@@ -1,6 +1,11 @@
 import React, { useContext } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { UserContext } from "../Contexts/UserContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "../Components/Navbar";
+import MyProjects from "./MyProjects";
+import MyProfile from "./MyProfile";
+import Explore from "./Explore";
 
 function Homepage(props) {
   const supabase = createClient(
@@ -24,10 +29,16 @@ function Homepage(props) {
           <button aria-label='Close'></button>
         </div>
       </div>
-      <div className='window-body'>
-        <p>Just testing!</p>
-        <h1>Hello!{props.name}</h1>
-        <button onClick={signOut}>Sign out</button>
+      <div className='window-body page-body'>
+        {/* <button onClick={signOut}>Sign out</button> */}
+        <Router>
+          <Navbar username={props.name} />
+          <Routes>
+            <Route path='/explore' element={<Explore />} />
+            <Route path='/myprojects' element={<MyProjects />} />
+            <Route path='/myprofile' element={<MyProfile />} />
+          </Routes>
+        </Router>
       </div>
     </div>
   );

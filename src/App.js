@@ -19,7 +19,7 @@ function App() {
     const user = supabase.auth.user();
     setUser(user);
   }
-
+  console.log(user);
   useEffect(() => {
     /* when the app loads, check to see if the user is signed in */
     checkUser();
@@ -46,7 +46,7 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className='App'>
-        {user ? <Homepage name={user.email} /> : <Landing />}
+        {user ? <Homepage name={user.user_metadata.user_name} /> : <Landing />}
       </div>
     </UserContext.Provider>
   );
