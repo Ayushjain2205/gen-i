@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { octokit } from "../Utils/octokit";
 import ProjectTile from "../Components/ProjectTile";
 
-function MyProjects() {
+function MyProjects({ username }) {
   const [repos, setRepos] = useState(null);
   useEffect(() => {
     async function onLoad() {
       await octokit
         .request("GET /users/{username}/repos", {
-          username: "Ayushjain2205",
+          username: `${username}`,
         })
         .then((res) => {
           const encoded = res.data;
