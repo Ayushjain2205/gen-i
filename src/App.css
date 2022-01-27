@@ -5,7 +5,7 @@
 
 .title-bar-text {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 24px;
 }
 
 .window-body.page-body {
@@ -14,7 +14,7 @@
 
 /* Navbar */
 .navbar {
-  font-size: 28px;
+  font-size: 22px;
   display: flex;
   justify-content: space-between;
 }
@@ -54,7 +54,7 @@
 
 .mint-btn {
   height: 80%;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
