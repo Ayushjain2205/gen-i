@@ -36,7 +36,10 @@ function Homepage(props) {
           <Routes>
             <Route path='/explore' element={<Explore />} />
             <Route path='/myprojects' element={<MyProjects />} />
-            <Route path='/myprofile' element={<MyProfile />} />
+            <Route
+              path='/myprofile'
+              element={<MyProfile username={props.name} />}
+            />
           </Routes>
         </Router>
       </div>

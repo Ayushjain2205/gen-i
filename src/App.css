@@ -66,3 +66,50 @@
   color: blue !important;
   font-weight: bold;
 }
+
+/* Pages */
+
+.page-content {
+  margin: 25px;
+}
+
+.page-title {
+  font-size: 36px;
+}
+
+/* My profile page */
+.profile-img {
+  height: 212px;
+  width: 212px;
+}
+
+.profile-holder {
+  padding: 30px;
+}
+
+.profile-holder {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.details p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.detail-tile {
+  width: 200px;
+  padding-left: 10px;
+}
+
+.section-title {
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+  gap: 5px;
+}
+
+.section-title h4 {
+  font-size: 28px;
+}
