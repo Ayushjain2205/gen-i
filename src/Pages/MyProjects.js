@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { octokit } from "../Utils/octokit";
+import ProjectTile from "../Components/ProjectTile";
 
 function MyProjects() {
   const [repos, setRepos] = useState(null);
@@ -21,6 +22,17 @@ function MyProjects() {
   return (
     <div className='page-content'>
       <h1 className='page-title'>My projects</h1>
+      <div className='projects-holder'>
+        {repos &&
+          repos.map(({ name, html_url, forks_count, stargazers_count }) => (
+            <ProjectTile
+              name={name}
+              html_url={html_url}
+              forks_count={forks_count}
+              stargazers_count={stargazers_count}
+            />
+          ))}
+      </div>
     </div>
   );
 }

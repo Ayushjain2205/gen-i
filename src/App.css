@@ -113,3 +113,43 @@
 .section-title h4 {
   font-size: 28px;
 }
+
+/* Projects page */
+
+.projects-holder {
+  margin-top: 25px;
+}
+
+.project-tile {
+  background-color: #ffffff;
+  width: 80%;
+  height: 145px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.project-name {
+  font-size: 24px;
+}
+
+.project-tile .top-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.project-tile a {
+  color: black;
+}
+
+.bottom-row {
+  padding-left: 25px;
+}
+
+.badge {
+  font-size: 15px;
+  width: 100px;
+  margin-bottom: 10px;
+  background-color: #bdbebd;
+}
