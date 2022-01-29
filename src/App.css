@@ -124,7 +124,7 @@
 .project-tile {
   background-color: #ffffff;
   width: 80%;
-  height: 145px;
+  min-height: 145px;
   border: 1px solid black;
   margin-bottom: 20px;
 }
@@ -146,6 +146,9 @@
 
 .bottom-row {
   padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .badge {
@@ -153,4 +156,53 @@
   width: 100px;
   margin-bottom: 10px;
   background-color: #bdbebd;
+}
+
+.bottom-column {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.mint {
+  margin-top: 30px;
+}
+
+.mint-btn {
+  height: max-content;
+}
+
+/* Individual project page and commits tiles */
+.commit-tile {
+  background-color: #ffffff;
+  width: 80%;
+  height: 145px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.commit-link {
+  margin-left: 10px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.sha-badge {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+  width: 120px;
+  padding-right: 10px;
+}
+
+.mint-holder {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.badge-holder {
+  display: inline-flex;
+  gap: 20px;
 }

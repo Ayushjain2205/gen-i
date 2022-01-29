@@ -6,6 +6,7 @@ import Navbar from "../Components/Navbar";
 import MyProjects from "./MyProjects";
 import MyProfile from "./MyProfile";
 import Explore from "./Explore";
+import Project from "./Project";
 
 function Homepage(props) {
   const supabase = createClient(
@@ -38,10 +39,14 @@ function Homepage(props) {
             <Route
               path='/myprojects'
               element={<MyProjects username={props.name} />}
-            />
+            ></Route>
             <Route
               path='/myprofile'
               element={<MyProfile username={props.name} />}
+            />
+            <Route
+              path='/project/:repoName'
+              element={<Project username={props.name} />}
             />
           </Routes>
         </Router>

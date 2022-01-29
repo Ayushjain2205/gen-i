@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function ProjectTile({ name, html_url, forks_count, stargazers_count }) {
   return (
@@ -17,6 +18,11 @@ function ProjectTile({ name, html_url, forks_count, stargazers_count }) {
           <p class='status-bar-field badge'>
             <i class='fas fa-star'></i> Star {stargazers_count}
           </p>
+        </div>
+        <div className='mint'>
+          <NavLink to={`/project/${name}`}>
+            <button className='mint-btn'>Mint</button>
+          </NavLink>
         </div>
       </div>
     </div>
