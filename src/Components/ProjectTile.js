@@ -6,7 +6,7 @@ function ProjectTile({ name, html_url, forks_count, stargazers_count }) {
     <div className='project-tile'>
       <div className='top-row'>
         <h4 className='project-name'>{name}</h4>
-        <a href={html_url}>
+        <a target='_blank' href={html_url}>
           <i class='fab fa-github fa-3x'></i>
         </a>
       </div>
@@ -21,7 +21,9 @@ function ProjectTile({ name, html_url, forks_count, stargazers_count }) {
         </div>
         <div className='mint'>
           <NavLink to={`/project/${name}`}>
-            <button className='mint-btn'>Mint</button>
+            <button className='mint-btn'>
+              <i class='fas fa-arrow-right'></i>
+            </button>
           </NavLink>
         </div>
       </div>

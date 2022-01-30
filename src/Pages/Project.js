@@ -25,7 +25,15 @@ function Project({ username }) {
 
   return (
     <div className='page-content'>
-      <h1 className='page-title'>{params.repoName}</h1>
+      <div className='section-title'>
+        <img
+          src='https://i.postimg.cc/mkFSftWD/directory-open-file-mydocs-1.png'
+          alt=''
+          srcset=''
+        />
+        <h1 className='page-title'>{params.repoName}</h1>
+      </div>
+
       <div className='projects-holder'>
         {commits &&
           commits.map(({ commit, sha, author }) => {

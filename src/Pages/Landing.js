@@ -49,7 +49,7 @@ function Landing() {
         </div>
       </div>
 
-      <div id='menu'>
+      <div class='menu-bar'>
         <div className='sidebar'></div>
         <div className='headline'>Windows 98</div>
         <ul className='menu-content'>

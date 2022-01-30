@@ -5,11 +5,25 @@
 
 .title-bar-text {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .window-body.page-body {
   min-height: 100vh;
+}
+
+.title-bar-controls button,
+.mint-btn {
+  background: silver;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold !important;
 }
 
 /* Navbar */
@@ -94,9 +108,14 @@
   gap: 50px;
 }
 
+.details h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .details p {
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .detail-tile {
@@ -205,4 +224,8 @@
 .badge-holder {
   display: inline-flex;
   gap: 20px;
+}
+
+.commit-title {
+  font-size: 24px;
 }

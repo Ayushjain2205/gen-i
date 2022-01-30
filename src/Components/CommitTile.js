@@ -3,7 +3,7 @@ import React from "react";
 function CommitTile({ url, sha, message, author }) {
   return (
     <div className='commit-tile'>
-      <h4>
+      <h4 className='commit-title'>
         {message}
         <a target='_blank' className='commit-link' href={url}>
           <i class='fas fa-external-link-alt'></i>

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { ConnectWallet } from "@3rdweb/react";
 
 function Navbar({ username }) {
   return (
@@ -37,12 +38,7 @@ function Navbar({ username }) {
         </p>
       </div>
       <div className='wallet-holder'>
-        <button className='mint-btn'>Mint</button>
-        <img
-          src='https://i.postimg.cc/XqR8w6jC/image-88.png'
-          alt=''
-          srcset=''
-        />
+        <ConnectWallet />
       </div>
     </nav>
   );

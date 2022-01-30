@@ -21,7 +21,15 @@ function MyProjects({ username }) {
   }, []);
   return (
     <div className='page-content'>
-      <h1 className='page-title'>My projects</h1>
+      <div className='section-title'>
+        <img
+          src='https://i.postimg.cc/wTGwrYK3/network-normal-two-pcs-2.png'
+          alt=''
+          srcset=''
+        />
+        <h1 className='page-title'>My projects</h1>
+      </div>
+
       <div className='projects-holder'>
         {repos &&
           repos.map(({ name, html_url, forks_count, stargazers_count }) => (

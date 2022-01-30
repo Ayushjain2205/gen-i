@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { ThirdwebProvider } from "@3rdweb/react";
 import "./App.css";
 import Landing from "./Pages/Landing";
 import Homepage from "./Pages/Homepage";
@@ -13,6 +14,12 @@ function App() {
   );
 
   const [user, setUser] = useState("");
+
+  const supportedChainIds = [80001];
+
+  const connectors = {
+    injected: {},
+  };
 
   async function checkUser() {
     /* if a user is signed in, update local state */
@@ -44,11 +51,20 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
-      <div className='App'>
-        {user ? <Homepage name={user.user_metadata.user_name} /> : <Landing />}
-      </div>
-    </UserContext.Provider>
+    <ThirdwebProvider
+      connectors={connectors}
+      supportedChainIds={supportedChainIds}
+    >
+      <UserContext.Provider value={{ user, setUser }}>
+        <div className='App'>
+          {user ? (
+            <Homepage name={user.user_metadata.user_name} />
+          ) : (
+            <Landing />
+          )}
+        </div>
+      </UserContext.Provider>
+    </ThirdwebProvider>
   );
 }
 
