@@ -15,12 +15,12 @@ const sdk = new ThirdwebSDK(
 );
 
 // The NFT module address received after initializing the NFT module on the dashboard.
-const nftCollectionAddress = "0x94faD9A61F13485b1eEf372A6dabF8435dA7C744";
+const nftCollectionAddress = "0x453B18Cc5d45962c6337A720C471B485c92dAc6F";
 
 // Initialize the NFT drop module with the contract address.
 const nftCollection = sdk.getNFTModule(nftCollectionAddress);
 
-export async function getAllNfts() {
+export const getAllNfts = async () => {
   await nftCollection
     .getAll()
     .then((data) => {
@@ -28,9 +28,9 @@ export async function getAllNfts() {
       return data;
     })
     .catch((err) => console.log(err));
-}
+};
 
-// export default getAllNfts;
+export default getAllNfts;
 
 const mintNft = async () => {
   try {

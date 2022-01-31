@@ -1,6 +1,6 @@
 import React from "react";
 
-function NFTtile({ img, contributor, name, link }) {
+function NFTtile({ img, contributor, name, link, index }) {
   return (
     <div className='nft-tile'>
       <img src={img} alt='' srcset='' />
@@ -12,13 +12,13 @@ function NFTtile({ img, contributor, name, link }) {
         <div className='nft-tile-bottom'>
           <button>
             <a
-              href='https://testnets.opensea.io/assets/mumbai/0x94fad9a61f13485b1eef372a6dabf8435da7c744/0'
+              href={`https://testnets.opensea.io/assets/mumbai/0x453b18cc5d45962c6337a720c471b485c92dac6f/${index}`}
               target='_blank'
             >
               Buy
             </a>
           </button>
-          <a href={link}>
+          <a href={link} target='_blank'>
             <i class='fab fa-github'></i>
           </a>
         </div>

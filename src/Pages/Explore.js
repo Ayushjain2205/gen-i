@@ -1,39 +1,10 @@
 import React from "react";
 import { getAllNfts } from "../sdk.ts";
 import NFTtile from "../Components/NFTtile";
+import { nfts } from "../Helpers/seeder";
 
 function Explore() {
-  const nfts = [
-    {
-      name: "Contribution 1",
-      description: "Testing",
-      image:
-        "https://cloudflare-ipfs.com/ipfs/QmQs5VrXNonAWKwmQDHchMTB1qZBg6i3UG3dzXo2CNfktQ/0.png",
-      external_url: "",
-      background_color: "",
-      properties: {
-        contributor: "johnDoe",
-        "commit-hash": "alsdjacliksdasdcl",
-      },
-      id: "0",
-      uri: "ipfs://QmSTBVo8UBYkU92dMrdta9f78ugnkw2TePiZTpNoAXxKwq/0",
-    },
-    {
-      name: "Contribution 1",
-      description: "Testing",
-      image:
-        "https://cloudflare-ipfs.com/ipfs/QmQs5VrXNonAWKwmQDHchMTB1qZBg6i3UG3dzXo2CNfktQ/0.png",
-      external_url: "",
-      background_color: "",
-      properties: {
-        contributor: "johnDoe",
-        "commit-hash": "alsdjacliksdasdcl",
-      },
-      id: "0",
-      uri: "ipfs://QmSTBVo8UBYkU92dMrdta9f78ugnkw2TePiZTpNoAXxKwq/0",
-    },
-  ];
-  console.log(nfts[0].properties["commit-hash"]);
+  const nft_list = nfts;
   return (
     <div className='page-content'>
       <div className='section-title'>
@@ -42,13 +13,15 @@ function Explore() {
       </div>
 
       <div className='nfts-holder'>
-        {nfts &&
-          nfts.map(({ name, image, properties }) => {
+        {nft_list &&
+          nft_list.map(({ name, image, properties }, index) => {
             return (
               <NFTtile
                 name={name}
                 img={image}
                 contributor={properties.contributor}
+                link={properties.link}
+                index={index}
               />
             );
           })}

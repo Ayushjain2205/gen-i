@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 function ProjectTile({ name, html_url, forks_count, stargazers_count }) {
   return (
     <div className='project-tile'>
-      <div className='top-row'>
-        <h4 className='project-name'>{name}</h4>
-        <a target='_blank' href={html_url}>
-          <i class='fab fa-github fa-3x'></i>
-        </a>
-      </div>
+      <NavLink to={`/project/${name}`}>
+        <div className='top-row'>
+          <h4 className='project-name'>{name}</h4>
+        </div>
+      </NavLink>
       <div className='bottom-row'>
         <div className='bottom-column'>
           <p class='status-bar-field badge'>
@@ -20,11 +19,9 @@ function ProjectTile({ name, html_url, forks_count, stargazers_count }) {
           </p>
         </div>
         <div className='mint'>
-          <NavLink to={`/project/${name}`}>
-            <button className='mint-btn'>
-              <i class='fas fa-arrow-right'></i>
-            </button>
-          </NavLink>
+          <a target='_blank' href={html_url}>
+            <i class='fab fa-github fa-3x'></i>
+          </a>
         </div>
       </div>
     </div>

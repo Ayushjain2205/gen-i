@@ -34,10 +34,10 @@ function Project({ username }) {
         <h1 className='page-title'>{params.repoName}</h1>
       </div>
 
-      <div className='projects-holder'>
+      <div className='commit-holder'>
         {commits &&
           commits.map(({ commit, sha, author }) => {
-            const url = `https://github.com/${commit.author.login}/${params.repoName}/commit/${sha}`;
+            const url = `https://github.com/${author.login}/${params.repoName}/commit/${sha}`;
             console.log(author.login);
             return (
               <CommitTile

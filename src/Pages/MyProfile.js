@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { octokit } from "../Utils/octokit";
 import { useWeb3 } from "@3rdweb/hooks";
-import { minter } from "../sdk.ts";
+import NFTtile from "../Components/NFTtile";
+import { nfts } from "../Helpers/seeder";
 
 function MyProfile({ username }) {
+  const nft_list = nfts;
   const { address } = useWeb3();
-  //   nfts(address);
-  minter();
-  //   console.log(address);
   const [code, setCode] = useState(null);
   useEffect(() => {
     async function onLoad() {
@@ -54,7 +53,19 @@ function MyProfile({ username }) {
         <img src='https://i.postimg.cc/5tjHN4SM/Full.png' alt='' srcset='' />
         <h4>Minted</h4>
       </div>
-      <h2>You have not minted any NFTs yet!</h2>
+      <div className='nfts-holder'>
+        {nft_list &&
+          nft_list.map(({ name, image, properties }) => {
+            return (
+              <NFTtile
+                name={name}
+                img={image}
+                contributor={properties.contributor}
+                link={properties.link}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 }
