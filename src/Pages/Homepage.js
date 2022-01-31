@@ -35,7 +35,7 @@ function Homepage(props) {
         <Router>
           <Navbar username={props.name} />
           <Routes>
-            <Route path='/explore' element={<Explore />} />
+            <Route path='/' element={<Explore />} />
             <Route
               path='/myprojects'
               element={<MyProjects username={props.name} />}

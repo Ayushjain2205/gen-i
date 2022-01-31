@@ -54,6 +54,7 @@ function MyProfile({ username }) {
         <img src='https://i.postimg.cc/5tjHN4SM/Full.png' alt='' srcset='' />
         <h4>Minted</h4>
       </div>
+      <h2>You have not minted any NFTs yet!</h2>
     </div>
   );
 }

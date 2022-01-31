@@ -10,7 +10,7 @@ function Navbar({ username }) {
           className={(navData) =>
             navData.isActive ? "navbar__link--active" : ""
           }
-          to='/explore'
+          to='/'
         >
           🛒Explore
         </NavLink>

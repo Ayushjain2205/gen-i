@@ -229,3 +229,45 @@ h6 {
 .commit-title {
   font-size: 24px;
 }
+
+/* Explore page  */
+.nft-tile {
+  height: 440px;
+  width: 300px;
+  background: #ffffff;
+  border: 1px solid black;
+}
+
+.nft-tile-details {
+  padding: 15px;
+}
+
+.nft-tile-details .name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nft-tile-details .contributor {
+  font-size: 18px;
+  font-weight: 400 !important;
+}
+
+.nft-tile-bottom {
+  font-size: 24px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nft-tile-bottom button {
+  background: silver;
+}
+
+.nfts-holder {
+  margin-top: 20px;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  column-gap: 50px;
+}
