@@ -336,3 +336,7 @@ h6 {
 .mint-modal-right .mint-btn {
   margin-left: 25px;
 }
+
+.custom-msg h1 {
+  font-size: 24px;
+}

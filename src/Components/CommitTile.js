@@ -3,6 +3,7 @@ import Overlay from "react-overlay-component";
 
 function CommitTile({ url, sha, message, author }) {
   const [isOpen, setOverlay] = useState(false);
+  const [showMsg, setMsg] = useState(false);
 
   const closeOverlay = () => setOverlay(false);
 
@@ -51,6 +52,7 @@ function CommitTile({ url, sha, message, author }) {
                 aria-label='Close'
                 onClick={() => {
                   setOverlay(false);
+                  setMsg(false);
                 }}
               ></button>
             </div>
@@ -84,8 +86,25 @@ function CommitTile({ url, sha, message, author }) {
                   <label for='link'>Link</label>
                   <input id='link' type='text' value={url} />
                 </div>
-                <button className='mint-btn'>Mint</button>
+                <button
+                  className='mint-btn'
+                  onClick={() => {
+                    setMsg(true);
+                  }}
+                >
+                  Mint
+                </button>
               </div>
+            </div>
+            <div
+              className='custom-msg'
+              style={{ display: showMsg ? "block" : "none" }}
+            >
+              <h1>
+                Thank you for showing interest! To get early access to Gen-i
+                contact{" "}
+                <span style={{ color: "blue" }}>entropylabs0711@gmail.com</span>
+              </h1>
             </div>
           </div>
         </div>
