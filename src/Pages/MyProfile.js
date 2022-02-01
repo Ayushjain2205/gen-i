@@ -54,17 +54,7 @@ function MyProfile({ username }) {
         <h4>Minted</h4>
       </div>
       <div className='nfts-holder'>
-        {nft_list &&
-          nft_list.map(({ name, image, properties }) => {
-            return (
-              <NFTtile
-                name={name}
-                img={image}
-                contributor={properties.contributor}
-                link={properties.link}
-              />
-            );
-          })}
+        <h1>You have not minted any NFTs yet!</h1>
       </div>
     </div>
   );
